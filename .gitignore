@@ -42,6 +42,13 @@ venv/
 .idea/
 .vscode/
 
+# Script de demo não usado no paper
+src/inference/track_video.py
+
+# Saídas regeneráveis dos scripts de análise (rodar o .py gera de novo)
+src/analysis/*.csv
+src/analysis/*.md
+
 # Scripts de limpeza/tooling local (não fazem parte do pipeline)
 cleanup_repo.sh
 reinit_and_link_repo.sh
