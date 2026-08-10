@@ -1,0 +1,7 @@
+Stage,MOTA,IDF1,ID_switches
+Baseline,75.9,71.2,2327
+"+ GM-FLIT
++ NSA",76.7,74.5,1634
+"+ Hard
+Mining",78.5,77.8,1089
++ SAHI,79.9,82.7,494
