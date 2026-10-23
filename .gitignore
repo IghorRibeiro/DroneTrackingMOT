@@ -1,54 +1,34 @@
-# Configs de experimentos descartados (GMC x ReID ablation, temporal box fusion)
-configs/tracker_variants/
-
-# Saídas órfãs de scripts já descartados
-paper_figures/output/fig7_tracking_example.pdf
-paper_figures/output/fig7_tracking_example.png
-src/analysis/association_ambiguity.csv
-src/analysis/association_ambiguity_summary.md
-
-# Script de teste em andamento (não faz parte do pipeline final)
-src/inference/run_sahi_tracker_kalman.py
-
-# Outputs sem origem confirmada / não usados no paper
-preprocessing_summary.csv
-preprocessing_summary.md
-stats_report.txt
-
-# Checkpoint pré-treinado padrão (baixado automaticamente pelo Ultralytics)
-yolo26n.pt
-
-# Dataset (external, regenerable from the 4th Anti-UAV Challenge release)
+# Dataset (not redistributed; see README, "Dataset")
+data/
 dataset/
+MultiUAV_Train/
+MultiUAV_Test/
 
-# Run outputs / experiment artifacts
+# Run outputs and saved trajectories (trajectories are distributed as a GitHub Release asset)
 runs/
+outputs/
+trajectories/
 
-# Model checkpoints -- keep only the ones referenced in the paper
+# Checkpoints and archives: only the two released detectors are tracked
 weights/*
 !weights/best.pt
 !weights/best_hardmining.pt
+*.pt
+!weights/best.pt
+!weights/best_hardmining.pt
+*.pth
+*.onnx
+*.zip
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 .venv/
 venv/
 *.egg-info/
+.pytest_cache/
 
-# OS / editor
+# OS / editors
 .DS_Store
 .idea/
 .vscode/
-
-# Script de demo não usado no paper
-src/inference/track_video.py
-
-# Saídas regeneráveis dos scripts de análise (rodar o .py gera de novo)
-src/analysis/*.csv
-src/analysis/*.md
-
-# Scripts de limpeza/tooling local (não fazem parte do pipeline)
-cleanup_repo.sh
-reinit_and_link_repo.sh

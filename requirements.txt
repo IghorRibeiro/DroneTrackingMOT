@@ -1,9 +1,17 @@
-ultralytics>=8.3.0
-opencv-python>=4.9.0
-numpy>=1.26.0
-pandas>=2.2.0
-motmetrics>=1.4.0
-scipy>=1.12.0
-matplotlib>=3.8.0
-tabulate>=0.9.0
-PyYAML>=6.0
+# Python 3.13 (developed with 3.13.5) on Apple silicon (macOS, MPS backend).
+# Versions are those of the environment that produced the paper's numbers, except numpy and opencv:
+# that environment ran numpy 1.26.4 (built from source for Python 3.13 and installed past pip's resolver) with opencv-contrib-python 4.11.0.86.
+# pandas 2.3.3 requires numpy >= 2.1 on Python 3.13 and sahi 0.12.2 requires opencv-python >= 4.12.0.88 (which needs numpy 2),
+# so pip cannot reproduce that pair; a numpy 2.x range and opencv-python 4.12.0.88 are used instead.
+ultralytics==8.4.113
+sahi==0.12.2
+motmetrics==1.4.0
+torch==2.13.0
+torchvision==0.28.0
+numpy>=2.1,<2.4
+pandas==2.3.3
+scipy==1.17.1
+matplotlib==3.11.1
+PyYAML==6.0.3
+opencv-python==4.12.0.88
+lap==0.5.13
