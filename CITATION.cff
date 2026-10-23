@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code or the reported results, please cite the paper."
+title: "From Baseline to HIT-Tracker: An Experimentally Optimized Pipeline for Infrared Multi-UAV Tracking"
+type: software
+authors:
+  - family-names: "Ribeiro"
+    given-names: "Ighor de Souza"
+    affiliation: "Centro de Instrução Almirante Alexandrino (CIAA)"
+  - family-names: "Fernandes"
+    given-names: "Rigel Procópio"
+    affiliation: "Diretoria de Sistemas de Armas da Marinha (DSAM)"
+  - family-names: "Luna"
+    given-names: "Gabriel de Sapienza"
+    affiliation: "Universidade Federal do Rio de Janeiro (UFRJ)"
+repository-code: "https://github.com/IghorRibeiro/DroneTrackingMOT"
+license: AGPL-3.0-only
+version: "1.0-lafusion2026"
+keywords:
+  - multi-object tracking
+  - infrared
+  - anti-UAV
+  - YOLO
+  - BoT-SORT
+  - SAHI
+preferred-citation:
+  type: conference-paper
+  title: "From Baseline to HIT-Tracker: An Experimentally Optimized Pipeline for Infrared Multi-UAV Tracking"
+  authors:
+    - family-names: "Ribeiro"
+      given-names: "Ighor de Souza"
+    - family-names: "Fernandes"
+      given-names: "Rigel Procópio"
+    - family-names: "Luna"
+      given-names: "Gabriel de Sapienza"
+  collection-title: "Fourth Latin American Workshop on Information Fusion (LAFusion 2026)"
+  collection-type: proceedings
+  publisher:
+    name: "Springer"
+  series: "Communications in Computer and Information Science (CCIS)"
+  year: 2026
+  notes: "To appear. Pages and DOI to be announced (TBA)."

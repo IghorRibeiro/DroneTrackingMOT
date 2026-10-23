@@ -1,0 +1,20 @@
+DroneTrackingMOT - third-party code and licenses
+================================================
+
+This repository is distributed under the GNU Affero General Public License v3.0 (see LICENSE).
+
+Copyright (c) 2026 Ighor de Souza Ribeiro, Rigel Procópio Fernandes, Gabriel de Sapienza Luna.
+
+Ultralytics (AGPL-3.0) - https://github.com/ultralytics/ultralytics
+  * src/tracking/gm_cost.py     adapts BOTSORT.get_dists (IoU distance, score fusion, optional ReID branch).
+  * src/tracking/nsa_kalman.py  adapts the update / re_activate methods of the BoT-SORT track so that the detection
+                                confidence reaches the Kalman filter.
+  * configs/trackers/*.yaml     are the default tracker configurations of Ultralytics 8.4.113 (the two blocks
+                                appended to botsort_gm_nsa.yaml are specific to this repository).
+  * The detector checkpoints released with this repository are YOLO26n weights fine-tuned with Ultralytics.
+
+Other dependencies are used as libraries and are not redistributed: SAHI (MIT), py-motmetrics (MIT), PyTorch (BSD-3-Clause),
+NumPy / pandas / SciPy / matplotlib (BSD-style), OpenCV (Apache-2.0).
+
+Dataset: 4th Anti-UAV Challenge, Track 3 (DOI 10.5281/zenodo.15103888). It is NOT redistributed here and remains subject
+to its own terms of use.
