@@ -1,0 +1,42 @@
+# Registry of every experiment reported in the paper. ``id`` is also the name of the trajectory directory
+# (trajectories/<id>/<sequence>.txt) and of the per-sequence CSV (results/per_sequence/<id>.csv).
+#   runner : yolo  -> src/tracking/run_yolo_tracker.py   (Ultralytics detector + tracker, fresh model per sequence)
+#            sahi  -> src/tracking/run_sahi_tracker.py   (SAHI tiles + BoT-SORT, fresh tracker per sequence)
+#            post  -> src/tracking/static_filter.py      (post-processing of saved trajectories)
+#   weights: baseline | hem
+# Detector confidence is 0.25 everywhere; tracker defaults come from configs/trackers/*.yaml.
+# GM cost + NSA-Kalman are enabled with ``gm: <gamma>`` (BoT-SORT only).
+table2:
+  botsort:    {runner: yolo, weights: baseline, tracker: botsort,    label: "BoT-SORT"}
+  fasttrack:  {runner: yolo, weights: baseline, tracker: fasttrack,  label: "FastTrack"}
+  bytetrack:  {runner: yolo, weights: baseline, tracker: bytetrack,  label: "ByteTrack"}
+  ocsort:     {runner: yolo, weights: baseline, tracker: ocsort,     label: "OC-SORT"}
+  deepocsort: {runner: yolo, weights: baseline, tracker: deepocsort, label: "Deep OC-SORT"}
+  tracktrack: {runner: yolo, weights: baseline, tracker: tracktrack, label: "TrackTrack"}
+table3:
+  hem_sahi320: {runner: sahi, weights: hem, tile: 320, label: "HEM + SAHI 320"}
+  hem_sahi384: {runner: sahi, weights: hem, tile: 384, label: "HEM + SAHI 384"}
+  hem_sahi448: {runner: sahi, weights: hem, tile: 448, label: "HEM + SAHI 448"}
+  hem_sahi512: {runner: sahi, weights: hem, tile: 512, label: "HEM + SAHI 512"}
+  hem_sahi576: {runner: sahi, weights: hem, tile: 576, label: "HEM + SAHI 576"}
+table4:
+  mog2:    {runner: yolo, weights: baseline, tracker: botsort, preprocess: mog2,    label: "MOG2"}
+  ema:     {runner: yolo, weights: baseline, tracker: botsort, preprocess: ema,     label: "EMA"}
+  optflow: {runner: yolo, weights: baseline, tracker: botsort, preprocess: optflow, label: "Dense optical flow"}
+table5:
+  gm_nsa_g055: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.55, label: "GM cost + NSA-Kalman (reference)"}
+  static:      {runner: post, source: gm_nsa_g055, window: 45, std_threshold: 2.0, label: "Static track filter"}
+  adaptive:    {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.55, item: adaptive, label: "Adaptive confidence threshold"}
+  lqb:         {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.55, item: lqb, label: "Lost-query bank"}
+pipeline:
+  hem: {runner: yolo, weights: hem, tracker: botsort, label: "HEM"}
+  hit: {runner: sahi, weights: hem, tile: 512, gm: 0.55, label: "HIT-Tracker (HEM + SAHI 512 + GM + NSA)"}
+gamma_sweep:   # Fig. 3, same recipe as gm_nsa_g055 with gamma in {0.15, ..., 0.85}
+  gm_nsa_g015: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.15}
+  gm_nsa_g025: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.25}
+  gm_nsa_g035: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.35}
+  gm_nsa_g045: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.45}
+  gm_nsa_g055: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.55}
+  gm_nsa_g065: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.65}
+  gm_nsa_g075: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.75}
+  gm_nsa_g085: {runner: yolo, weights: baseline, tracker: botsort_gm_nsa, gm: 0.85}

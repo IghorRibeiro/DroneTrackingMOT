@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-19T23:27:14",
+  "device": "mps",
+  "ultralytics": "8.4.113",
+  "on_ac": true,
+  "low_power_mode": 0,
+  "loadavg_before_start": 1.68,
+  "conditions_ok": false,
+  "warnings": [
+    "load average 1.68 > 1.0 ap\u00f3s 60 min"
+  ],
+  "note": "An unrelated system service used ~1 core during the whole session (load average 2-3); relative comparisons inside the session remain valid."
+}

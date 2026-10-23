@@ -1,4 +1,6 @@
-path: /Users/ighorribeiro/PycharmProjects/DroneTrackingMOT/dataset/dataset_yolo
+# Ultralytics dataset description for the base detector. ``path`` is relative to the directory the training command is
+# started from (the repository root); the dataset itself is NOT distributed (see README, "Dataset").
+path: data/dataset_yolo
 train: images/train
 val: images/val
 nc: 1

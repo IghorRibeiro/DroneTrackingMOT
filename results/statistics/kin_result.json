@@ -1,0 +1,79 @@
+{
+  "seconds": 43.42784833908081,
+  "n_transitions": 464345,
+  "n_TP": 421929,
+  "smoke": false,
+  "tests": {
+    "TP_vs_FP:area_ratio": {
+      "n_other": 42150,
+      "U": 8889735021.0,
+      "p": 0.9265191542059019,
+      "median_TP": 0.999965767492811,
+      "median_other": 0.9997320108683657
+    },
+    "TP_vs_FP:width_ratio": {
+      "n_other": 42150,
+      "U": 8958992789.0,
+      "p": 0.010812448372565927,
+      "median_TP": 1.0,
+      "median_other": 1.0
+    },
+    "TP_vs_FP:height_ratio": {
+      "n_other": 42150,
+      "U": 8910829039.0,
+      "p": 0.4763843547059927,
+      "median_TP": 1.0,
+      "median_other": 1.0
+    },
+    "TP_vs_FP:center_shift_normalized": {
+      "n_other": 42150,
+      "U": 6695489653.0,
+      "p": 0.0,
+      "median_TP": 0.0010102055512675,
+      "median_other": 0.00187858425042405
+    },
+    "TP_vs_FP:aspect_ratio_ratio": {
+      "n_other": 42150,
+      "U": 8986037227.5,
+      "p": 0.0003437870328307011,
+      "median_TP": 1.0,
+      "median_other": 0.9996453133798002
+    },
+    "TP_vs_ID_SWITCH:area_ratio": {
+      "n_other": 266,
+      "U": 54440564.0,
+      "p": 0.39899223735790634,
+      "median_TP": 0.999965767492811,
+      "median_other": 1.0008049187323822
+    },
+    "TP_vs_ID_SWITCH:width_ratio": {
+      "n_other": 266,
+      "U": 56344444.0,
+      "p": 0.9086949267248216,
+      "median_TP": 1.0,
+      "median_other": 0.9992743980847162
+    },
+    "TP_vs_ID_SWITCH:height_ratio": {
+      "n_other": 266,
+      "U": 53920079.0,
+      "p": 0.2689898273867972,
+      "median_TP": 1.0,
+      "median_other": 1.0018276199479246
+    },
+    "TP_vs_ID_SWITCH:center_shift_normalized": {
+      "n_other": 266,
+      "U": 53609582.5,
+      "p": 0.20709148832441326,
+      "median_TP": 0.0010102055512675,
+      "median_other": 0.0010620893423238
+    },
+    "TP_vs_ID_SWITCH:aspect_ratio_ratio": {
+      "n_other": 266,
+      "U": 62232965.5,
+      "p": 0.0020839043701348214,
+      "median_TP": 1.0,
+      "median_other": 0.9931640086102251
+    }
+  },
+  "p_idswitch_center_shift": 0.20709148832441326
+}

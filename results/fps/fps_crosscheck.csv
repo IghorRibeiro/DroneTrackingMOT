@@ -1,0 +1,9 @@
+point,reference,n_seq,identical,ids_total,detail
+hem_sahi512,runs/mot_eval,30,True,712.0,
+hit,runs/mot_eval,30,True,494.0,
+botsort,mot_prediction/results/exp_b/traj/baseline_ref,30,True,,
+bytetrack,tcc_hoje/resultados/parte2/traj/lb_bytetrack,30,True,,
+fasttrack,tcc_hoje/resultados/parte2/traj/lb_fasttrack,30,True,,
+ocsort,tcc_hoje/resultados/parte2/traj/lb_ocsort,30,True,,
+tracktrack,tcc_hoje/resultados/parte2/traj/lb_tracktrack,30,True,,
+deepocsort,tcc_hoje/resultados/parte2/traj/lb_deepocsort,30,True,,

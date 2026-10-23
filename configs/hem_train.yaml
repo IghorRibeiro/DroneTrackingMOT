@@ -1,0 +1,29 @@
+# Hard-example-mining (HEM) fine-tuning of YOLO26n. Values are the arguments recorded inside the released checkpoint
+# (train_args of best_hardmining.pt). The original run used a single NVIDIA Tesla T4 (device 0).
+# Starting point: best.pt (the base detector below).
+model: weights/best.pt
+data: data/dataset_yolo_hem/data.yaml   # written by src/detector/build_hem_dataset.py (3,846 hard + 5,000 random images)
+epochs: 8
+patience: 8
+batch: 32
+imgsz: 640                         # native resolution
+optimizer: AdamW
+lr0: 0.00005
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+mosaic: 1.0
+close_mosaic: 0
+seed: 0
+deterministic: true
+amp: true
+workers: 2
+cache: disk
+# Hard-example selection (src/detector/select_hard_examples.py):
+#   score = 2*(100 - MOTA) + (100 - IDF1) + 0.02*FN + 0.005*FP + 0.20*IDs   (per training sequence, baseline tracker)
+#   top_k = 20 sequences -> configs/splits/hem_hard_sequences_20.txt (3,846 images at stride 4)
+#   plus 5,000 random training images -> configs/splits/hem_easy_5000_images.txt
+hard_selection:
+  top_k: 20
+  mix_random_images: 5000

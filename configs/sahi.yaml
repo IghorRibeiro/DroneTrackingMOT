@@ -1,0 +1,14 @@
+# SAHI sliced inference on the hard-example-mined (HEM) detector (Table 3 and HIT-Tracker).
+# Each frame is cut into overlapping square tiles processed at native resolution; detections are merged by
+# SAHI's greedy NMM (match metric IOS). BoT-SORT is fed with the merged detections.
+detector: hem                      # weights/best_hardmining.pt
+confidence_threshold: 0.25
+postprocess_match_threshold: 0.6   # SAHI merge threshold
+# Tile sizes of the Table 3 sweep. NOTE: the overlap ratio was not constant across the sweep
+# (0.30 / 0.25 for the two smallest tiles, 0.20 otherwise), so tile size and overlap are confounded for 320 and 384.
+tiles:
+  320: {slice: 320, overlap: 0.30}
+  384: {slice: 384, overlap: 0.25}
+  448: {slice: 448, overlap: 0.20}
+  512: {slice: 512, overlap: 0.20}  # selected for HIT-Tracker
+  576: {slice: 576, overlap: 0.20}

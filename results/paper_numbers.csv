@@ -1,0 +1,33 @@
+table,id,label,mota,idf1,ids,fps,rel_fps
+table2,botsort,BoT-SORT (adopted),76.0,71.2,2355,45.05,
+table2,fasttrack,FastTracker,72.7,50.5,3948,51.96,
+table2,bytetrack,ByteTrack,71.7,49.4,4582,52.74,
+table2,ocsort,OC-SORT,71.5,51.8,4454,49.61,
+table2,deepocsort,Deep OC-SORT,71.2,52.5,4165,48.7,
+table2,tracktrack,TrackTrack,63.1,68.9,836,43.54,
+table3,hem_sahi320,SAHI 320,76.4,77.5,864,,0.49
+table3,hem_sahi384,SAHI 384,77.6,79.5,642,,0.65
+table3,hem_sahi448,SAHI 448,77.9,80.8,592,,0.63
+table3,hem_sahi512,SAHI 512,79.6,80.3,712,,1.0
+table3,hem_sahi576,SAHI 576,79.6,79.9,718,,1.02
+neg_preproc,botsort,Baseline,76.0,71.2,2355,,
+neg_preproc,mog2,MOG2,-168.6,16.0,5048,,
+neg_preproc,ema,EMA,2.4,38.0,4882,,
+neg_preproc,optflow,Dense optical flow,22.6,25.8,5544,,
+neg_interventions,gm_nsa_g055,GM cost + NSA-Kalman (reference),76.9,74.8,1611,,
+neg_interventions,static,Static track filter,65.7,68.9,1816,,
+neg_interventions,adaptive,Adaptive confidence threshold,77.0,74.9,1535,,
+neg_interventions,lqb,Lost-query bank,76.0,72.4,3464,,
+fig3,botsort,Baseline,76.0,71.2,2355,45.05,
+fig3,gm_nsa_g055,GM cost + NSA-Kalman,76.9,74.8,1611,,
+fig3,hem,HEM,76.7,71.2,2374,,
+fig3,hem_sahi512,HEM + SAHI512,79.6,80.3,712,14.53,
+fig3,hit,HIT-Tracker,79.9,82.7,494,14.48,
+fig2,gm_nsa_g015,gamma 0.15,76.5,72.3,2139,,
+fig2,gm_nsa_g025,gamma 0.25,76.7,73.5,2015,,
+fig2,gm_nsa_g035,gamma 0.35,76.8,74.7,1889,,
+fig2,gm_nsa_g045,gamma 0.45,76.9,74.7,1709,,
+fig2,gm_nsa_g055,gamma 0.55,76.9,74.8,1611,,
+fig2,gm_nsa_g065,gamma 0.65,76.6,74.0,1650,,
+fig2,gm_nsa_g075,gamma 0.75,76.0,72.0,1973,,
+fig2,gm_nsa_g085,gamma 0.85,75.1,70.6,2211,,
